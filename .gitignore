@@ -1,0 +1,5 @@
+/ServerApp/DayzDatabaseServer/.vs
+/ServerApp/DayzDatabaseServer/bin
+/ServerApp/DayzDatabaseServer/obj
+/ServerApp/DayzDatabaseServer/packages
+*.csproj.user

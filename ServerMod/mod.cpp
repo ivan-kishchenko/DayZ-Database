@@ -1,0 +1,10 @@
+name = "Database";
+tooltip = "Database - By Ivan Kishchenko";
+overview = "A server mod that allows developers of other DayZ mods to work with a SQL database.";
+action = "https://steamcommunity.com/sharedfiles/filedetails/?id=0";
+author = "Ivan Kishchenko";
+version = "1.0";
+picture = "Database/data/database_logo_m.paa";
+logoSmall = "Database/data/database_logo_ss.paa";
+logo = "Database/data/database_logo_s.paa";
+logoOver = "Database/data/database_logo_s.paa";

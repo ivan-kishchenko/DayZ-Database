@@ -1,0 +1,22 @@
+﻿using Nancy;
+using System.IO;
+using System.Text;
+
+namespace DayzDatabaseServer
+{
+    public class RestApi : NancyModule
+    {
+        public RestApi()
+        {
+            Post("/{dbName}/query", x => {
+                var body = new StreamReader(this.Request.Body, Encoding.UTF8).ReadToEnd();
+                return DatabasePool.Instance.GetOrCreate(x.dbName).Query(body);
+            });
+
+            Post("/{dbName}/transaction", x => {
+                var body = new StreamReader(this.Request.Body, Encoding.UTF8).ReadToEnd();
+                return DatabasePool.Instance.GetOrCreate(x.dbName).Transaction(body);
+            });
+        }
+    }
+}
