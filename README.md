@@ -45,7 +45,7 @@ These are standard SQLite files, so they can be edited with any utility that sup
 ### For mod developers (how to use in other mods)
 
 Add this mod in your mod's dependencies (in config.cpp like ```requiredAddons[] = {..., "Database"};```)
-To start working with the database, [install the mod on your server](###-For-server-owners-how-to-install)
+To start working with the database, [install the mod on your server](#for-server-owners-how-to-install)
 
 You can debug and track errors in SQL queries by starting the database server with the "--debug" flag.
 
