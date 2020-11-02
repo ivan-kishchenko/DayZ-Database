@@ -24,7 +24,7 @@ This mod allows you to execute arbitrary SQL queries to the local SQLite databas
 
 ### How does it work
 
-Launching "DayzDatabaseServer.exe" creates a REST service on the port specified in the command line launch parameters. 
+Launching "DayzDatabaseServer.exe" creates a REST service with SQLite database provider on the port specified in the command line launch parameters. 
 The standard port (if not specified) is 2312. 
 This port must be closed for external incoming connections using the firewall settings, since all interaction with the DayZ server occurs locally.
 
