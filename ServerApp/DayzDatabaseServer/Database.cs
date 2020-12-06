@@ -122,12 +122,29 @@ namespace DayzDatabaseServer
                 for (int col = 0; col < reader.FieldCount; col++)
                 {
                     var value = reader[col];
-                    row[col] = value != null ? value.ToString() : string.Empty;
+                    row[col] = StringifyValue(value);
                 }
 
                 results.Add(row);
             }
-            return JsonConvert.SerializeObject(results, Formatting.None);
+            
+            var result = JsonConvert.SerializeObject(results, Formatting.None);
+            return string.IsNullOrEmpty(result) ? "[]" : result;
+        }
+
+        private string StringifyValue(object value)
+        {
+            if (value == null)
+            {
+                return string.Empty;
+            }
+
+            if (value is Boolean)
+            {
+                return ((bool)value) ? "1" : "0";
+            }
+
+            return value.ToString();
         }
 
         private string GetStorageFolder()
