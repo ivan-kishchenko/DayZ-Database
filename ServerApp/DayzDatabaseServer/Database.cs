@@ -60,7 +60,7 @@ namespace DayzDatabaseServer
             }
             catch(Exception ex)
             {
-                logger.Error($"Database '{name}' query failed: {ex.Message}");
+                logger.Error($"Database '{name}' query '{query}' failed: {ex.Message}");
                 throw;
             }
         }
@@ -101,7 +101,7 @@ namespace DayzDatabaseServer
             catch (Exception ex)
             {
                 transaction.Rollback();
-                logger.Error($"Database '{name}' transaction failed on query {queryId}: {ex.Message}");
+                logger.Error($"Database '{name}' transaction '{transactionData}' failed on query {queryId}: {ex.Message}");
                 throw;
             }
 
