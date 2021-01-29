@@ -65,6 +65,26 @@ namespace DayzDatabaseServer
             }
         }
 
+        public string QueryNoStrict(string query)
+        {
+            try
+            {
+                if (logger.IsDebugEnabled) logger.Debug($"Database '{name}' query start: {query}");
+
+                var command = new SQLiteCommand(query, this.connection);
+                var reader = command.ExecuteReader();
+                var result = SerializeResult(reader);
+
+                if (logger.IsDebugEnabled) logger.Debug($"Database '{name}' query end: {result}");
+
+                return result;
+            }
+            catch
+            {
+                return "";
+            }
+        }
+
         public string Transaction(string transactionData)
         {
             int queryId = 0;
